@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="employee"
+            type="com.lsm.databindingtest.Employee" />
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_a"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:imageUrl="@{employee.avatar}"
+            app:placeholder="@{@drawable/default_avatar}"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/iv_b"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:imageUrl="@{employee.avatar}"
+            app:layout_constraintTop_toBottomOf="@+id/iv_a"
+            app:placeholder="@{@drawable/default_avatar}"
+            tools:ignore="MissingConstraints" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
